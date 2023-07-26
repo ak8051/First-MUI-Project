@@ -10,8 +10,10 @@ import {
   Toolbar,
 } from "@mui/material";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = ({ drawerWidth }) => {
+  const navigate = useNavigate();
   return (
     <Drawer
       sx={{
@@ -29,7 +31,11 @@ const Sidebar = ({ drawerWidth }) => {
       <Divider />
       <List>
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton
+            onClick={() => {
+              navigate("/");
+            }}
+          >
             <ListItemIcon>
               <Home />
             </ListItemIcon>
@@ -38,7 +44,11 @@ const Sidebar = ({ drawerWidth }) => {
         </ListItem>
 
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton
+            onClick={() => {
+              navigate("/create");
+            }}
+          >
             <ListItemIcon>
               <Create />
             </ListItemIcon>
