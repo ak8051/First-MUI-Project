@@ -6,7 +6,7 @@ import React from "react";
 
 const ColorButton = styled(Button)(({ theme }) => ({
   color: theme.palette.getContrastText(green[500]),
-  backgroundColor: green[500],
+  backgroundColor: theme.palette.myColor.main,
   "&:hover": {
     backgroundColor: green[700],
   },

@@ -17,7 +17,7 @@ const Home = () => {
         }}
       >
         <Typography variant="h6" sx={{ ml: "16px", fontSize: "1.3em" }}>
-          Food
+          كشري
         </Typography>
         <Typography
           variant="h6"
