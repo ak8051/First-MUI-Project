@@ -8,6 +8,14 @@ import {
 import Root from "./pages/Root";
 import Home from "./pages/Home";
 import Create from "./pages/Create";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { CssBaseline } from "@mui/material";
+
+const darkTheme = createTheme({
+  palette: {
+    mode: "dark",
+  },
+});
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,9 +28,12 @@ const router = createBrowserRouter(
 
 function App() {
   return (
-    <div className="App">
-      <RouterProvider router={router} />
-    </div>
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+      <div className="App">
+        <RouterProvider router={router} />
+      </div>
+    </ThemeProvider>
   );
 }
 
