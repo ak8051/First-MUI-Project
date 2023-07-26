@@ -1,6 +1,16 @@
+import styled from "@emotion/styled";
 import { NavigateNext } from "@mui/icons-material";
 import { Box, InputAdornment, TextField, Button } from "@mui/material";
+import { green } from "@mui/material/colors";
 import React from "react";
+
+const ColorButton = styled(Button)(({ theme }) => ({
+  color: theme.palette.getContrastText(green[500]),
+  backgroundColor: green[500],
+  "&:hover": {
+    backgroundColor: green[700],
+  },
+}));
 
 const Create = () => {
   return (
@@ -26,9 +36,14 @@ const Create = () => {
         }}
         variant="filled"
       />
-      <Button variant="contained" color="success" sx={{ mt: "20px" }}>
-        Add <NavigateNext />
-      </Button>
+
+      <ColorButton
+        variant="contained"
+        endIcon={<NavigateNext />}
+        sx={{ mt: "20px" }}
+      >
+        Add
+      </ColorButton>
     </Box>
   );
 };
